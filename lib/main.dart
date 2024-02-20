@@ -1,125 +1,125 @@
+import 'package:babyami/pages/Addpage.dart';
+import 'package:babyami/pages/Homepage.dart';
+import 'package:babyami/pages/Profilepage.dart';
+import 'package:babyami/pages/Searchpage.dart';
+import 'package:babyami/pages/Settingpage.dart';
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: AnimatedCurvedNavigationBar(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class AnimatedCurvedNavigationBar extends StatefulWidget {
+  const AnimatedCurvedNavigationBar({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _AnimatedCurvedNavigationBarState createState() =>
+      _AnimatedCurvedNavigationBarState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+//$$$$$$$$$$$$$$$$$$$$$$$$$
+//** Instagram :
+//  ** @CodeWithFlexz
+// ----------------
+//** Github :
+//  ** AmirBayat0
+// ----------------
+//** Youtube :
+//  ** Programming with Flexz
+//$$$$$$$$$$$$$$$$$$$$$$$$$
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class _AnimatedCurvedNavigationBarState
+    extends State<AnimatedCurvedNavigationBar> {
+  GlobalKey<CurvedNavigationBarState> bottomNavigationBar = GlobalKey();
+  int index = 2;
+  final screens= [
+    AddPage(),
+    SettingPage(),
+    HomePage(),
+    SearchPage(),
+    ProfilePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    final items = <Widget>[
+      Icon(Icons.add, size: 30),
+      Icon(Icons.book, size: 30),
+      Icon(Icons.home, size: 30),
+      Icon(Icons.search_rounded, size: 30),
+      Icon(Icons.person, size: 30)
+    ];
     return Scaffold(
+      extendBody: true,
+      backgroundColor: Color(0xffEEDDD4),
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: TweenAnimationBuilder(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, // Đặt căn giữa trái và phải
+            children: [
+              Icon(
+                Icons.settings,
+                size: 30,
+                color: Color(0xff48477F),
+              ),
+              Padding(
+                padding: EdgeInsets.all(0), // Điều chỉnh giữa icon và văn bản
+                child: Text(
+                  "BabySync",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: 'Dancing Script',
+                    color: Color(0xff48477F),
+                  ),
+                ),
+              ),
+              Icon(
+                // Thêm biểu tượng khác nếu cần thiết
+                Icons.note_add,
+                size: 30,
+                color: Color(0xff48477F),
+              ),
+            ],
+          ),
+          tween: Tween<double>(begin: 0, end: 1),
+          duration: Duration(milliseconds: 500),
+          curve: Curves.bounceIn,
+          builder: (BuildContext context, double _value, child) {
+            return Opacity(
+              opacity: _value,
+              child: child,
+            );
+          },
+        ),
+        centerTitle: true,
+        backgroundColor: Color(0xffEDC8B3),
+        elevation: 0,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      body: screens[index],
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        items: items,
+        animationDuration: Duration(milliseconds: 300),
+        color: Colors.white,
+        height: 55,
+        index: index,
+        onTap: (index) => setState(() => this.index = index
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
