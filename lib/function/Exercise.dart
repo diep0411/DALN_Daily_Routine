@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class AddPage extends StatelessWidget{
+class Exercise extends StatelessWidget{
   @override
   Widget build(BuildContext context) => Scaffold(
       backgroundColor: Colors.red,
       body: Center(
         child: Text(
-          'Add',
+          'Exercise',
           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 60),
         ),
       )

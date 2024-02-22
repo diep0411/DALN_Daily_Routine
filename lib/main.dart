@@ -1,7 +1,5 @@
-import 'package:babyami/pages/Addpage.dart';
 import 'package:babyami/pages/Homepage.dart';
 import 'package:babyami/pages/Profilepage.dart';
-import 'package:babyami/pages/Searchpage.dart';
 import 'package:babyami/pages/Settingpage.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -45,22 +43,18 @@ class AnimatedCurvedNavigationBar extends StatefulWidget {
 class _AnimatedCurvedNavigationBarState
     extends State<AnimatedCurvedNavigationBar> {
   GlobalKey<CurvedNavigationBarState> bottomNavigationBar = GlobalKey();
-  int index = 2;
+  int index = 1;
   final screens= [
-    AddPage(),
     SettingPage(),
     HomePage(),
-    SearchPage(),
     ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
-      Icon(Icons.add, size: 30),
-      Icon(Icons.book, size: 30),
+      Icon(Icons.settings, size: 30),
       Icon(Icons.home, size: 30),
-      Icon(Icons.search_rounded, size: 30),
       Icon(Icons.person, size: 30)
     ];
     return Scaffold(

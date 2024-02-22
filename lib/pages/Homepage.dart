@@ -1,3 +1,8 @@
+import 'package:babyami/function/Exercise.dart';
+import 'package:babyami/function/HandBook.dart';
+import 'package:babyami/function/Mydoctor.dart';
+import 'package:babyami/function/Nutrition.dart';
+import 'package:babyami/function/date_important.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -123,6 +128,10 @@ class HomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HandBook()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
@@ -156,6 +165,10 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Nutrition()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
@@ -229,6 +242,10 @@ class HomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DateImportant()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
@@ -274,6 +291,10 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Exercise()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
@@ -307,6 +328,10 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Mydoctor()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
