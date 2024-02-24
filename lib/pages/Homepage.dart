@@ -1,3 +1,4 @@
+import 'package:babyami/function/Exercise.dart';
 import 'package:babyami/function/date_important.dart';
 import 'package:flutter/material.dart';
 
@@ -127,7 +128,7 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.all(8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(left: 10.0,right: 10.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
@@ -144,7 +145,7 @@ class HomePage extends StatelessWidget {
                               height: 50,
                             ),
                             Text(
-                              'Handbook',
+                              'Cẩm Nang',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -160,7 +161,7 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(top:8.0,right:12.0,left: 12.0,bottom: 8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(left: 9.0,right: 9.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
@@ -173,13 +174,13 @@ class HomePage extends StatelessWidget {
                           children: [
                             Image.asset(
                               'assets/icons/pyramid.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
-                              width: 50,
+                              width: 45,
                               height: 50,
                             ),
                             Text(
-                              'Nutrition',
+                              'Dinh Dưỡng',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff48477F),
                               ),
@@ -193,7 +194,7 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(top:8.0,right:12.0,left: 12.0,bottom: 8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(left: 18.0,right: 18.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
@@ -210,7 +211,7 @@ class HomePage extends StatelessWidget {
                               height: 50,
                             ),
                             Text(
-                              'Medicine',
+                              'Vac-Xin',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -250,13 +251,13 @@ class HomePage extends StatelessWidget {
                           children: [
                             Image.asset(
                               'assets/icons/calendar.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
-                              width: 50,
-                              height: 50,
+                              width: 40,
+                              height: 40,
                             ),
                             Column(
                               children: [
                                 Text(
-                                  'Date',
+                                  'Ngày',
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -264,7 +265,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'important',
+                                  'Quan Trọng',
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -279,10 +280,14 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Exercise()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(top:8.0,right:12.0,left: 12.0,bottom: 8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(left: 18.0,right: 18.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
@@ -299,7 +304,7 @@ class HomePage extends StatelessWidget {
                               height: 50,
                             ),
                             Text(
-                              'exercise',
+                              'Thể Dục',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -315,7 +320,7 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.all(8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(left: 21.0,right: 21.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
@@ -332,7 +337,7 @@ class HomePage extends StatelessWidget {
                               height: 50,
                             ),
                             Text(
-                              'My Doctor',
+                              'Tư Vấn',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,

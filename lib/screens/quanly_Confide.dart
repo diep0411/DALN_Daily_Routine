@@ -102,7 +102,7 @@ class _QuanLyConfideState extends State<QuanLyConfide> {
             padding: EdgeInsets.only(right: 8.0),
             child: Icon(Icons.add),
           ),
-          label: Text("Add"),
+          label: Text("Thêm"),
           onPressed: () => formAddConfide(context),
         ),
       ),
