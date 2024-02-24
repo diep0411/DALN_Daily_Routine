@@ -1,6 +1,5 @@
 import 'package:babyami/pages/Homepage.dart';
 import 'package:babyami/pages/Profilepage.dart';
-import 'package:babyami/pages/Settingpage.dart';
 import 'package:babyami/screens/quanly_Confide.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
