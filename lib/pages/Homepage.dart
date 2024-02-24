@@ -138,10 +138,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.book,
-                              size: 50,
-                              color: Color(0xff48477F),
+                            Image.asset(
+                              'assets/icons/medical-book.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
+                              width: 50,
+                              height: 50,
                             ),
                             Text(
                               'Handbook',
@@ -171,10 +171,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.food_bank_outlined,
-                              size: 50,
-                              color: Color(0xff48477F),
+                            Image.asset(
+                              'assets/icons/pyramid.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
+                              width: 50,
+                              height: 50,
                             ),
                             Text(
                               'Nutrition',
@@ -204,10 +204,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.medical_services,
-                              size: 50,
-                              color: Color(0xff48477F),
+                            Image.asset(
+                              'assets/icons/syringe.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
+                              width: 50,
+                              height: 50,
                             ),
                             Text(
                               'Medicine',
@@ -248,10 +248,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.calendar_today,
-                              size: 40,
-                              color: Color(0xff48477F),
+                            Image.asset(
+                              'assets/icons/calendar.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
+                              width: 50,
+                              height: 50,
                             ),
                             Column(
                               children: [
@@ -293,10 +293,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.directions_run,
-                              size: 50,
-                              color: Color(0xff48477F),
+                            Image.asset(
+                              'assets/icons/yoga.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
+                              width: 50,
+                              height: 50,
                             ),
                             Text(
                               'exercise',
@@ -326,10 +326,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.account_box_rounded,
-                              size: 50,
-                              color: Color(0xff48477F),
+                            Image.asset(
+                              'assets/icons/medical-team.png', // Đường dẫn của hình ảnh trong tài nguyên của bạn
+                              width: 50,
+                              height: 50,
                             ),
                             Text(
                               'My Doctor',

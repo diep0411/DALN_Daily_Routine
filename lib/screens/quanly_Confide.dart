@@ -42,8 +42,6 @@ class _QuanLyConfideState extends State<QuanLyConfide> {
     ),
 
 
-
-
   ];
 
   addConfide(int ma, String Tieude, String Noidung) {
@@ -71,6 +69,7 @@ class _QuanLyConfideState extends State<QuanLyConfide> {
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,25 +78,28 @@ class _QuanLyConfideState extends State<QuanLyConfide> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Tâm Thư Của Mẹ',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Color(0xff48477F),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              // Khoảng cách trên và dưới là 20.0
+              child: Text(
+                'Tâm Thư Của Mẹ',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff48477F),
+                ),
               ),
             ),
-            //FormNhapNhanVien(addNhanVien),
             DanhSachConfide(danhSachConfide),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: 80.0), // Adjust the padding as needed
+        padding: EdgeInsets.only(bottom: 80.0),
         child: FloatingActionButton.extended(
           icon: Padding(
-            padding: EdgeInsets.only(right: 8.0), // Adjust the padding as needed
+            padding: EdgeInsets.only(right: 8.0),
             child: Icon(Icons.add),
           ),
           label: Text("Add"),
@@ -107,3 +109,4 @@ class _QuanLyConfideState extends State<QuanLyConfide> {
     );
   }
 }
+

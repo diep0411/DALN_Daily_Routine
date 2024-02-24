@@ -69,10 +69,10 @@ class _DanhSachConfideState extends State<DanhSachConfide> {
           children: [
             Icon(
               Icons.check_circle,
-              color: Colors.green,
+              color: Color(0xffEDC8B3),
             ),
             SizedBox(width: 8),
-            Text('Xóa thành công!', style: TextStyle(color: Colors.green)),
+            Text('Xóa thành công!', style: TextStyle(color: Color(0xffEDC8B3))),
           ],
         ),
       ),
