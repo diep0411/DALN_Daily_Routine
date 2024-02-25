@@ -64,7 +64,6 @@ class Exercise extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey),
                       ),
                     ),
-                    // Right side: Customized horizontal bar
                     Container(
                       width: 165.0, // Customize the width as needed
                       height: 15.0,
