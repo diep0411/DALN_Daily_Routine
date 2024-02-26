@@ -1,4 +1,5 @@
 import 'package:babyami/function/Exercise.dart';
+import 'package:babyami/function/Nutrition.dart';
 import 'package:babyami/function/date_important.dart';
 import 'package:flutter/material.dart';
 
@@ -158,6 +159,10 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => NutriTion()),
+                        );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
