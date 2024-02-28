@@ -7,9 +7,8 @@ class DateImportant extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Color(0xffEEDDD4),
         appBar: AppBar(
-          title: Center(
-            child: Text('Ngày quan trọng'),
-          ),
+          title: Text('Ngày quan trọng'),
+          centerTitle: true,
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();

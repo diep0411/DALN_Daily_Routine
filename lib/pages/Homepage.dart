@@ -1,4 +1,5 @@
 import 'package:babyami/function/Exercise.dart';
+import 'package:babyami/function/HandBook.dart';
 import 'package:babyami/function/Nutrition.dart';
 import 'package:babyami/function/date_important.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,18 @@ class HomePage extends StatelessWidget {
 
     // Danh sách tên tháng viết tắt tiếng Anh
     List<String> monthAbbreviations = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
     ];
 
     // Lấy tên viết tắt của tháng hiện tại
@@ -68,7 +80,10 @@ class HomePage extends StatelessWidget {
                     children: [
                       Text(
                         '$monthAbbreviation\n${now.day}',
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Color(0xff48477F)),
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff48477F)),
                       ),
                     ],
                   ),
@@ -82,10 +97,9 @@ class HomePage extends StatelessWidget {
                       Text(
                         '$passedWeeks tuần $passedDays ngày',
                         style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xff48477F),
-                          fontWeight: FontWeight.bold
-                        ),
+                            fontSize: 20,
+                            color: Color(0xff48477F),
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -118,7 +132,8 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 50), // Điều chỉnh giảm khoảng cách giữa các phần tử
+            margin: EdgeInsets.only(
+                top: 50), // Điều chỉnh giảm khoảng cách giữa các phần tử
             child: Column(
               children: [
                 Row(
@@ -126,16 +141,25 @@ class HomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        // TODO: Handle the handbook icon tap event.
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HandBook()),
+                        );
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 10.0,right: 10.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(
+                            left: 10.0,
+                            right: 10.0,
+                            top: 10.0,
+                            bottom:
+                                10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
                             width: 2.0, // Độ dày của đường viền
                           ),
-                          borderRadius: BorderRadius.circular(8.0), // Độ cong của góc
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Độ cong của góc
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -166,13 +190,19 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 9.0,right: 9.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(
+                            left: 9.0,
+                            right: 9.0,
+                            top: 10.0,
+                            bottom:
+                                10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
                             width: 2.0, // Độ dày của đường viền
                           ),
-                          borderRadius: BorderRadius.circular(8.0), // Độ cong của góc
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Độ cong của góc
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -199,13 +229,19 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 18.0,right: 18.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(
+                            left: 18.0,
+                            right: 18.0,
+                            top: 10.0,
+                            bottom:
+                                10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
                             width: 2.0, // Độ dày của đường viền
                           ),
-                          borderRadius: BorderRadius.circular(8.0), // Độ cong của góc
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Độ cong của góc
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -238,18 +274,25 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => DateImportant()),
+                          MaterialPageRoute(
+                              builder: (context) => DateImportant()),
                         );
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(top:8.0,right:18.0,left: 15.0,bottom: 8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(
+                            top: 8.0,
+                            right: 18.0,
+                            left: 15.0,
+                            bottom:
+                                8.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
                             width: 2.0, // Độ dày của đường viền
                           ),
-                          borderRadius: BorderRadius.circular(8.0), // Độ cong của góc
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Độ cong của góc
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -292,13 +335,19 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 18.0,right: 18.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(
+                            left: 18.0,
+                            right: 18.0,
+                            top: 10.0,
+                            bottom:
+                                10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
                             width: 2.0, // Độ dày của đường viền
                           ),
-                          borderRadius: BorderRadius.circular(8.0), // Độ cong của góc
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Độ cong của góc
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -325,13 +374,19 @@ class HomePage extends StatelessWidget {
                         // TODO: Handle the handbook icon tap event.
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 21.0,right: 21.0,top: 10.0,bottom: 10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
+                        padding: EdgeInsets.only(
+                            left: 21.0,
+                            right: 21.0,
+                            top: 10.0,
+                            bottom:
+                                10.0), // Điều chỉnh khoảng cách giữa biểu tượng và đường viền
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xff68A8DA), // Màu của đường viền
                             width: 2.0, // Độ dày của đường viền
                           ),
-                          borderRadius: BorderRadius.circular(8.0), // Độ cong của góc
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Độ cong của góc
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
