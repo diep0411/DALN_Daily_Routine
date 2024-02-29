@@ -1,29 +1,37 @@
 import "package:flutter/material.dart";
 
-class FormNhapConfide extends StatelessWidget {
+class FormNhapConfide extends StatefulWidget {
   final Function addConfide;
 
+  FormNhapConfide(this.addConfide);
+
+  @override
+  _FormNhapConfideState createState() => _FormNhapConfideState();
+}
+
+class _FormNhapConfideState extends State<FormNhapConfide> {
   final maController = TextEditingController();
   final TieudeController = TextEditingController();
   final NoidungController = TextEditingController();
-
-  FormNhapConfide(this.addConfide);
 
   submitData() {
     final enterMaController = maController.text;
     final enterTieuDeController = TieudeController.text;
     final enterNoiDungController = NoidungController.text;
 
-    if ((int.parse(enterMaController) != null) &&
+    if ((int.tryParse(enterMaController) != null) &&
         (enterTieuDeController.length > 3) &&
-        (enterNoiDungController.length > 1))
-      addConfide(
+        (enterNoiDungController.length > 1)) {
+      widget.addConfide(
         int.parse(enterMaController),
         enterTieuDeController,
         enterNoiDungController,
       );
-    else
-      return;
+      // Clear text fields after submitting
+      maController.clear();
+      TieudeController.clear();
+      NoidungController.clear();
+    }
   }
 
   @override

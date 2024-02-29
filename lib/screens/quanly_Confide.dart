@@ -28,18 +28,6 @@ class _QuanLyConfideState extends State<QuanLyConfide> {
       ngaynhap: DateTime(2002, 8, 20),
       noidung: "Con thân mến.....",
     ),
-    Confide(
-      ma: 4,
-      tieude: "THƯ GỬI CON YÊU DẤU",
-      ngaynhap: DateTime(2002, 8, 20),
-      noidung: "Con thân mến.....",
-    ),
-    Confide(
-      ma: 5,
-      tieude: "THƯ GỬI CON YÊU DẤU",
-      ngaynhap: DateTime(2002, 8, 20),
-      noidung: "Con thân mến.....",
-    ),
 
 
   ];
