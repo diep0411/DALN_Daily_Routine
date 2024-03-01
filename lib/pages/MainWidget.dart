@@ -1,3 +1,4 @@
+import 'package:babyami/pages/Confidepage.dart';
 import 'package:babyami/pages/Homepage.dart';
 import 'package:babyami/pages/LoginPage.dart';
 import 'package:babyami/pages/Profilepage.dart';
@@ -6,7 +7,6 @@ import 'package:babyami/pages/RegisterPage.dart';
 import 'package:babyami/pages/StatusPage.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:babyami/screens/quanly_Confide.dart';
 
 class MainWidget extends StatefulWidget {
   const MainWidget({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _MainWidgetState extends State<MainWidget> {
 
   final screens = [
     //AddPage(),
-    QuanLyConfide(),
+    ConfidePage(),
     HomePage(),
     //SearchPage(),
     ProfilePage(),
