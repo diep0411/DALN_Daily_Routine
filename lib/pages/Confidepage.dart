@@ -72,14 +72,14 @@ class _ConfidePagePageState extends State<ConfidePage> {
           children: [
             TextField(
               controller: _titleControler,
-              decoration: const InputDecoration(hintText: "Title"),
+              decoration: const InputDecoration(hintText: "Tiêu Đề"),
             ),
             const SizedBox(
               height: 10,
             ),
             TextField(
               controller: _descriptionControler,
-              decoration: const InputDecoration(hintText: "Description"),
+              decoration: const InputDecoration(hintText: "Nhập nội dung..."),
             ),
             const SizedBox(
               height: 20,
