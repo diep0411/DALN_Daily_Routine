@@ -47,10 +47,10 @@ class _AnimatedCurvedNavigationBarState
   }
 
   // Hàm này sẽ được gọi từ trang đăng nhập hoặc trang đăng ký sau khi đăng nhập thành công
-  void navigateToHomePage() {
-    setState(() {
-      currentPage =
-          MainWidget(); // Chuyển đến trang chính sau khi đăng nhập thành công
-    });
-  }
+  // void navigateToHomePage() {
+  //   setState(() {
+  //     currentPage =
+  //         MainWidget(username: username.text); // Chuyển đến trang chính sau khi đăng nhập thành công
+  //   });
+  // }
 }

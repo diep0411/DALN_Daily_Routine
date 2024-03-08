@@ -1,3 +1,5 @@
+import 'package:babyami/JsonModels/users.dart';
+import 'package:babyami/SQLite/sqlite.dart';
 import 'package:babyami/pages/MainWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:babyami/pages/RegisterPage.dart';
@@ -10,11 +12,41 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final username = TextEditingController();
+  final password = TextEditingController();
 
-  bool _obscureText = true;
+  //A bool variable for show and hide password
+  bool isVisible = false;
 
+  //Here is our bool variable
+  bool isLoginTrue = false;
+
+  final db = DatabaseHelper();
+
+  
+
+  //Now we should call this function in login button
+  login() async {
+    var response = await db
+        .login(Users(usrName: username.text, usrPassword: password.text));
+        
+    if (response == true) {
+      //If login is correct, then goto notes
+    
+      if (!mounted) return;
+      
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) =>  MainWidget(username: username.text)));
+    } else {
+      //If not, true the bool value to show error message
+      setState(() {
+        isLoginTrue = true;
+      });
+    }
+  }
+
+  //We have to create global key for our form
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+             key: _formKey,
             children: [
               const SizedBox(height: 50.0),
               Center(
@@ -63,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 10.0),
                     TextField(
-                      controller: _emailController,
+                      controller: username,
                       decoration: InputDecoration(
                         labelText: "Email",
                         hintText: "babysync@babysync.com",
@@ -72,37 +105,40 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 10.0),
                     TextField(
-                      controller: _passwordController,
-                      obscureText: _obscureText,
+                      controller: password,
+                    obscureText: !isVisible,
                       decoration: InputDecoration(
                         labelText: "Mật khẩu",
                         hintText: "8-20 kí tự bao gồm chữ cái và số",
                         border: OutlineInputBorder(),
                         suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _obscureText = !_obscureText;
-                            });
-                          },
-                          icon: Icon(
-                            _obscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                          ),
+                              onPressed: () {
+                                //In here we will create a click to show and hide the password a toggle button
+                                setState(() {
+                                  //toggle button
+                                  isVisible = !isVisible;
+                                });
+                              },
+                              icon: Icon(isVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off)
                         ),
                       ),
                     ),
                     const SizedBox(height: 20.0),
                     ElevatedButton(
                       onPressed: () {
+                       
+                            login();
+                         
                         // Thực hiện xử lý đăng nhập ở đây
                         // Sau khi xử lý xong, chuyển đến trang MainWidget
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MainWidget(),
-                          ),
-                        );
+                        // Navigator.pushReplacement(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => MainWidget(),
+                        //   ),
+                        // );
                       },
                       child: const Text("Đăng nhập"),
                       style: ElevatedButton.styleFrom(
@@ -114,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text("Bạn chưa có tài khoản?"),
-                        TextButton(
+                        TextButton( 
                           onPressed: () {
                             // Navigate to RegisterPage
                             Navigator.push(
@@ -128,6 +164,12 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
+                    isLoginTrue
+                      ? const Text(
+                          "Username or passowrd is incorrect",
+                          style: TextStyle(color: Colors.red),
+                        )
+                      : const SizedBox(),
                   ],
                 ),
               ),

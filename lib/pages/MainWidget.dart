@@ -9,22 +9,27 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+  final String username;
+  const MainWidget({Key? key, required this.username}) : super(key: key);
 
   @override
   _MainWidgetState createState() => _MainWidgetState();
 }
 
 class _MainWidgetState extends State<MainWidget> {
+  late List<Widget> screens; // Khai báo biến screens
   int index = 1; // Home page index
+  @override
+  void initState() {
+    super.initState();
+    screens = [
+      ConfidePage(),
+      HomePage(),
+      ProfilePage(username1: widget.username),
+    ];
+  }
 
-  final screens = [
-    //AddPage(),
-    ConfidePage(),
-    HomePage(),
-    //SearchPage(),
-    ProfilePage(),
-  ];
+
 
   @override
   Widget build(BuildContext context) {
